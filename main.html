@@ -9,34 +9,8 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			if (arr.length == 1) {
-				return -Infinity;
-			} else if (arr.length == 0) {
-				return undefined;
-			}
-
-			let highest =  Number.MIN_VALUE;
-			let secondHighest =  Number.MIN_VALUE;
-			let index = 0;
-
-			for (let i = 0; i < arr.length; i++) {
-				if (highest < arr[i]) {
-					highest = arr[i];
-					index = i;
-				} else {
-					continue;
-				}
-			}
-
-			for (let j = 0; j < arr.length; j++) {
-				if (secondHighest < arr[j] && index != j) {
-					secondHighest = arr[j];
-				} else {
-					continue;
-				}
-			}
-
-			return secondHighest;
+			arr.sort();
+			return arr[arr.length-2];
 		}
 
 		function Main() {
