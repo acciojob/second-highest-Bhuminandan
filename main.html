@@ -9,8 +9,32 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
-			
+			if (arr.length == 1) {
+				return -Infinity;
+			}
+
+			let highest = 0;
+			let secondHighest = 0;
+			let index = 0;
+
+			for (let i = 0; i < arr.length; i++) {
+				if (highest < arr[i]) {
+					highest = arr[i];
+					index = i;
+				} else {
+					continue;
+				}
+			}
+
+			for (let j = 0; j < arr.length; j++) {
+				if (secondHighest < arr[j] && index != j) {
+					secondHighest = arr[j];
+				} else {
+					continue;
+				}
+			}
+
+			return secondHighest;
 		}
 
 		function Main() {
