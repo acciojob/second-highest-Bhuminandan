@@ -10,15 +10,19 @@
 	<script>
 		function secondHighest(arr) {
 			if (arr.length <= 1) {
-				return undefined;
+				return;
 			}
-			
+			if (arr[i] > 0) {	
 			arr.sort();
 			return arr[arr.length-2];
+			} else {
+				arr.sort();
+			return arr[1];
+			}
 		}
 
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			var n = promp("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
