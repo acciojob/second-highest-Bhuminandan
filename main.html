@@ -9,16 +9,20 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			if (arr.length <= 1) {
-				return;
+			function secondHighest(arr) {
+			//Write your code here
+			let max= Number.MIN_VALUE;;
+			
+			let secondmax= Number.MIN_VALUE;
+			for(let i=0;i<arr.length;i++){
+				if(arr[i] > max){
+					secondmax = max;
+					max = arr[i];
+				}   else if ( arr[i] > secondmax && arr[i] != max){
+		            secondmax = arr[i];
+			     }
 			}
-			if (arr[i] > 0) {	
-			arr.sort();
-			return arr[arr.length-2];
-			} else {
-				arr.sort();
-			return arr[1];
-			}
+				return secondmax;
 		}
 
 		function Main() {
