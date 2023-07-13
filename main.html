@@ -10,8 +10,9 @@
 	<script>
 		function secondHighest(arr) {
 			if (arr.length <= 1) {
-				return Number.MIN_VALUE:
+				return undefined:
 			}
+			
 			arr.sort();
 			return arr[arr.length-2];
 		}
