@@ -15,6 +15,18 @@
           return -Infinity;
         }
 
+        let flag = true;
+
+        for (let i = 0; i < arr.length-1; i++) {
+          if (arr[i] != arr[i+1]) {
+            flag = false;
+          }
+        }
+
+        if (flag == true) {
+          return arr[arr.length-1]
+        }
+
         // sort the array
         if (arr[0] > 0) {
           arr.sort();
