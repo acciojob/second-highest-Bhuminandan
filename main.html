@@ -16,7 +16,11 @@
         }
 
         // sort the array
-        arr.sort();
+        if (arr[0] > 0) {
+          arr.sort();
+        } else{
+          arr.sort().reverse();
+        }
 
         // start from second last element
         // as the largest element is at last
