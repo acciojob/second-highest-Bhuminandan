@@ -1,51 +1,45 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+  <body>
+    <script>
+      function secondHighest(arr) {
+        let i, first, second;
 
-<body>	
-	<script>
-		function secondHighest(arr) {
-			
-		let n = arr.length;	
-		let larg = Number.MIN_VALUE;
-		let larg2 = Number.MIN_VALUE;
-		let index = -1;
+        // There should be atleast two elements
+        if (arr.length < 2) {
+          return -Infinity;
+        }
 
-		for(let i=0; i<n; i++) {
-             if (larg <arr[i]) {
-				 larg = arr [i];
-				 index = i;
-			 }
-		}
-		for (let i=0; i<n; i++) {
-			
-			if (larg2 < arr[i] && i != index) {
-				larg2 = arr [i];
-			}
-			
-		}
-			return larg2;
+        // sort the array
+        arr.sort();
 
-		}
+        // start from second last element
+        // as the largest element is at last
+        for (i = arr.length - 2; i >= 0; i--) {
+          // if the element is not
+          // equal to largest element
+          if (arr[i] != arr[arr.length - 1]) {
+            return arr[i];
+          }
+        }
+      }
 
-		function Main() {
-			var n = prompt("Enter the number of elements");
-			var arr = [];
-			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
-			}
-			alert(secondHighest(arr));
-		}
-		Main();
-	</script>
+      function Main() {
+        var n = prompt("Enter the number of elements");
+        var arr = [];
+        for (var i = 0; i < n; i++) {
+          arr[i] = prompt("Enter element " + (i + 1));
+        }
+        alert(secondHighest(arr));
+      }
+      Main();
+    </script>
 
-    <script type="text/javascript" src="./script.js">
-</script>
-
-</body>
-
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
 </html>
